@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+:root {
+    /* SmartRail Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Deep Royal Blue - Primary */
+    --primary: 220 48% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Saffron Orange - Accent */
+    --accent: 28 97% 48%;
+    --accent-foreground: 0 0% 10%;
+
+    /* Light Gray - Secondary */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 28 97% 48%;
+
+    --radius: 0.75rem;
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.6;
+    --glass-border: 0 0% 0% / 0.1;
+
+    /* Neon Glows */
+    --glow-primary: 220 48% 20%;
+    --glow-accent: 28 97% 48%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 48% 20%) 0%, hsl(28 97% 48%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 98% / 0.8) 0%, hsl(0 0% 95% / 0.6) 100%);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 220 48% 20%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 28 97% 48%;
+  }
+
+  html.dark {
+    /* SmartRail Dark Theme - Deep Charcoal Base */
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Deep Royal Blue - Primary */
+    --primary: 220 48% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Saffron Orange - Accent */
+    --accent: 28 97% 48%;
+    --accent-foreground: 0 0% 10%;
+
+    /* Metallic Silver - Secondary */
+    --secondary: 0 0% 75%;
+    --secondary-foreground: 220 15% 12%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 28 97% 48%;
+
+    --radius: 0.75rem;
+
+    /* Glassmorphism */
+    --glass-bg: 220 15% 12% / 0.6;
+    --glass-border: 0 0% 100% / 0.1;
+
+    /* Neon Glows */
+    --glow-primary: 220 48% 20%;
+    --glow-accent: 28 97% 48%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 48% 20%) 0%, hsl(28 97% 48%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 15% 12% / 0.8) 0%, hsl(220 15% 15% / 0.6) 100%);
+
+    /* Sidebar */
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 220 48% 20%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 28 97% 48%;
+  }
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: linear-gradient(135deg, hsl(var(--card) / 0.6) 0%, hsl(var(--card) / 0.4) 100%);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.5);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(var(--glow-accent) / 0.5);
+  }
+
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
